@@ -1,19 +1,27 @@
 import { Routes } from '@angular/router';
 import { ProductsListComponent } from './pages/products-list/products-list.component';
-
+import { ProductDetailComponent } from './pages/products-list/product-detail/product-detail.component';
 import { CartComponent } from './pages/cart/cart.component';
 
-
-//need to define default route(home page), and one for cart 
-export const routes: Routes = [{
-    path:'', 
-    pathMatch:'full', 
+export const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'products',
+    pathMatch: 'full'
+  },
+  {
+    path: 'products',
     component: ProductsListComponent
-}, 
-{//route for cart page 
-    path:'cart',
-    component: CartComponent,
-    //to show on UI we go in app component 
-}
-
+  },
+  {
+    path: 'products/:id',
+    loadComponent: () =>
+      import('./pages/products-list/product-detail/product-detail.component').then(
+        (m) => m.ProductDetailComponent
+      )
+  },
+  {
+    path: 'cart',
+    component: CartComponent
+  }
 ];
