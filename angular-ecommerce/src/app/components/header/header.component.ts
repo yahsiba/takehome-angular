@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
   template: `
   <div class = "bg-slate-100 px-4 py-3 shadow-md flex justify-between items-center"
     >
-    <button class= "text-xl" routerLink="/"> My Store</button>
+    <button class= "text-xl " routerLink="/"> Jersey Junction </button>
     <app-primary-button 
       [label] = "'Cart(' + cartService.cart().length + ')'" 
       routerLink="/cart"
