@@ -40,14 +40,6 @@ export class ProductService {
       stock: 2
     }, 
     {
-      id: 5,
-      name: 'FC Barcelona 2024-25 Away Kit',
-      description: 'Barcelona’s latest away jersey with refelctive logos.',
-      price: 110.99,
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtbwwuhDoeBWyoI7OIGZwxh0mNnKhNgFtMUw&s',
-      stock: 2
-    }, 
-    {
       id: 6,
       name: 'Real Madrid 2024-25 Third Kit',
       description: 'Barcelona’s latest away jersey with refelctive logos.',
