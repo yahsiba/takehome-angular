@@ -6,29 +6,40 @@ import { Product } from '../models/products.model';
 })
 export class CartService {
   cart = signal<Product[]>([
-    {
-      id: 1,
-      name: 'Inter Miami CF 2024',
-      price: 149.99,
-      image: 'https://www.caneswear.com/cdn/shop/files/IU0189_1_APPAREL_Photography_FrontView_white.jpg?v=1707372881&width=1200',
-      stock: 8,
-    },
-    {
-      id: 2,
-      name: 'Bayern Munich 23/24',
-      price: 74.99,
-      image: 'https://m.media-amazon.com/images/I/51ePL2UP8GL._AC_UF1000,1000_QL80_.jpg',
-      stock: 5,
-    }
   ]);
 
-  addToCart(product: Product) {
-    this.cart.set([...this.cart(), product]);
-  }
+  outOfStockMessage = signal<string | null>(null);
 
-  removeFromCart(id: number) {
-    this.cart.set(this.cart().filter((p) => p.id !== id));
+  addToCart(product: Product) {
+    // Optional check in case the user tries to add an out-of-stock item
+    const currentCount = this.cart().filter(p => p.id === product.id).length;
+
+    if (!product.stock || product.stock <= 0) {
+      // If no stock is available, show out-of-stock message
+      this.outOfStockMessage.set("Item is out of stock!");
+    } else if (currentCount < product.stock) {
+      // Allowed to add if current count is less than available stock
+      this.cart.set([...this.cart(), product]);
+      // Clear any error message if addition is successful
+      this.outOfStockMessage.set(null);
+    } else {
+      // If current count reaches or exceeds available stock, show limit reached message
+      this.outOfStockMessage.set("Maximum item limit reached");
+    }
   }
+  
+  removeFromCart(id: number) {
+    const currentCart = this.cart();
+    const index = currentCart.findIndex(p => p.id === id);
+    if (index >= 0) {
+      const newCart = [
+        ...currentCart.slice(0, index),
+        ...currentCart.slice(index + 1)
+      ];
+      this.cart.set(newCart);
+    }
+  }
+  
 
   constructor() {}
 }
