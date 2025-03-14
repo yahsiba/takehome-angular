@@ -1,0 +1,7 @@
+<div class="header-container">
+  <button class="header-title" routerLink="/">Jersey Junction</button>
+  <app-primary-button
+    [label]="'Cart(' + cartService.cart().length + ')'"
+    routerLink="/cart">
+  </app-primary-button>
+</div>

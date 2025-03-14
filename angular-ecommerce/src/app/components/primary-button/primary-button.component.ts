@@ -1,21 +1,12 @@
-import { Component, input , output, EventEmitter} from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-primary-button',
-  imports: [],
-  template: `
-  <button class = "bg-blue-500 text-white w-full border px-5 py-2 rounded-xl shadow-md hover:opacity-90" 
-  (click)="btnClicked.emit()"
-  >
-      {{ label() }}
-  </button>
-  `,
-  styles: ``
+  standalone: true,
+  templateUrl: './primary-button.component.html',
+
 })
 export class PrimaryButtonComponent {
   label = input('');
-
-  //output to make it reusable 
   btnClicked = output();
-
 }

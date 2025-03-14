@@ -1,0 +1,7 @@
+<div class="products-list">
+    <app-product-card
+      *ngFor="let product of products; trackBy: trackById"
+      [product]="product"
+    ></app-product-card>
+  </div>
+  

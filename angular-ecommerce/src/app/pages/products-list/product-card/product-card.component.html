@@ -1,0 +1,19 @@
+<div class="product-card" *ngIf="product() as prod">
+  <img [src]="prod.image" alt="{{ prod.name }}" class="product-image" />
+  <h3 class="product-name">{{ prod.name }}</h3>
+  <p class="product-price">{{ '$' + prod.price }}</p>
+  <p *ngIf="prod.description" class="product-description">
+    {{ prod.description }}
+  </p>
+  <button class="add-to-cart" (click)="addToCart()">Add to Cart</button>
+  <button class="view-details" (click)="viewDetails()">View Details</button>
+  <span
+    class="stock-status"
+    [ngClass]="{
+      'in-stock': (prod.stock ?? 0) > 0,
+      'out-of-stock': (prod.stock ?? 0) === 0
+    }"
+  >
+    {{ (prod.stock ?? 0) > 0 ? (prod.stock + ' left') : 'Out of stock' }}
+  </span>
+</div>
