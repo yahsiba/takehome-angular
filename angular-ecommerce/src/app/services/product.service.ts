@@ -1,3 +1,16 @@
+/**
+ * ProductService
+ *
+ * Purpose:
+ *   Provides product data to the application.
+ *
+ * How It Works:
+ *   - Contains a hardcoded array of Product objects.
+ *   - Exposes methods to get all products and to get a product by its ID, returning data as Observables.
+ *
+ * Usage Example:
+ *   Inject this service into components (e.g., ProductsListComponent, ProductDetailComponent) to fetch product data.
+ */
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Product } from '../models/products.model';
@@ -46,9 +59,7 @@ export class ProductService {
       price: 110.99,
       image: 'https://xclusivejerseys.com/cdn/shop/files/Untitled_design_18_94d6727f-fe2b-4d7f-afa0-c21f31a6a9d1.png?v=1718723218',
       stock: 4
-    }, 
-  
-
+    }
   ];
 
   getProducts(): Observable<Product[]> {

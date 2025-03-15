@@ -1,155 +1,326 @@
+/* =========================
+   Shared Global Stylesheet Documentation
+   =========================
 
+   This stylesheet contains all the global and reusable styles for the application.
+   It is intended to provide a consistent visual theme across the app, including typography,
+   layout, colors, and component-specific styling such as for buttons, headers, product cards,
+   alerts, and order summaries.
 
+   --------------------------
+   Global Settings
+   --------------------------
+   - Sets the body background color, margin, and font family.
+   - Ensures that the overall look of the application starts with a clean slate.
+
+   --------------------------
+   Buttons
+   --------------------------
+   - .basic-button: Styles for standard buttons including color, border, padding,
+     border-radius, and hover effects.
+   - .primary-button: Specific styling for primary action buttons with a standard blue
+     background, white text, and hover opacity transition.
+
+   --------------------------
+   Header
+   --------------------------
+   - .header-container: Styles the header area with a light background, padding, box shadow,
+     and flex layout to space out content.
+   - .header-title: Styles for the header title (e.g., "Jersey Junction"), including font
+     size, family (Montserrat), and weight.
+
+   --------------------------
+   Cart Item
+   --------------------------
+   - .cart-item: Defines the layout for individual items in the shopping cart, including
+     flex alignment, border, padding, and gap.
+   - .item-image, .item-details, .item-name, .item-price: These classes style the product image,
+     detail container, and typography for each cart item.
+
+   --------------------------
+   Products List
+   --------------------------
+   - .products-list: Uses CSS Grid to display product cards in a responsive layout with spacing,
+     max-width, and centered content.
+
+   --------------------------
+   Product Card
+   --------------------------
+   - .product-card: Provides styling for individual product cards including background,
+     border, padding, box shadow, transition effects, and responsive width.
+   - .product-image, .product-name, .product-price, .product-description:
+     Style the image, title, price, and description inside a product card.
+   - .add-to-cart, .view-details: Styles for the action buttons on product cards,
+     with distinct backgrounds, borders, and hover effects.
+   - .stock-status, .in-stock, .out-of-stock: Typography and color definitions for displaying
+     product stock information.
+
+   --------------------------
+   Alert Banner
+   --------------------------
+   - .alert-banner: Provides styling for alert messages. Uses a red background,
+     white text, padding, border-radius, and margin to create a prominent, centered alert banner.
+
+   --------------------------
+   Order Summary
+   --------------------------
+   - .order-summary: Styles the order summary section with a white background, border,
+     padding, and rounded corners.
+
+   --------------------------
+   Product Detail Styles
+   --------------------------
+   - .detail-container: Provides padding around the product detail view.
+   - .detail-title: Styles the product name on the detail page with a larger, bold font.
+   - .detail-image: Forces a fixed size for product images on the detail page,
+     using object-fit to maintain aspect ratio.
+   - .detail-price, .detail-description: Define spacing and typography for price and description.
+   - .out-of-stock: Ensures consistency by reusing the out-of-stock styling.
+   
+   Usage:
+     - Import this file globally via angular.json or in your global styles.css.
+     - Use the defined class names in your component templates to ensure consistency.
+   
+   This approach centralizes styling and improves maintainability, reusability, and the overall
+   visual consistency of the application.
+*/
+
+/* -------------------------
+   Global Settings
+------------------------- */
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* -------------------------
+   Buttons
+------------------------- */
 .basic-button {
-    color: #000;
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .basic-button:hover {
-    opacity: 0.9;
-  }
-  
-  .primary-button {
-    background-color: #1d4ed8; /* A standard blue */
-    color: #fff;
-    width: 100%;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .primary-button:hover {
-    opacity: 0.9;
-  }
-  
-  /* HEADER */
-  .header-container {
-    background-color: #f2f2f2;
-    padding: 1rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .header-title {
-    font-size: 1.25rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-  }
-  
-  /* CART ITEM */
-  .cart-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 1rem;
-  }
-  .item-image {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-  }
-  .item-details {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  .item-name {
-    font-weight: bold;
-    margin-bottom: 0.25rem;
-  }
-  .item-price {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  /* PRODUCTS LIST */
-  .products-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  /* PRODUCT CARD */
-  .product-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 1rem;
-    text-align: center;
-    margin: 0 auto;
-    width: 250px;
-  }
-  .product-image {
-    width: 200px;
-    height: 120px;
-    object-fit: contain;
-    margin-bottom: 0.5rem;
-  }
-  .product-name {
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  .product-price {
-    font-weight: bold;
-    color: #333;
-  }
-  .product-description {
-    font-size: 0.875rem;
-    color: #666;
-    margin: 0.5rem 0;
-  }
-  .add-to-cart,
-  .view-details {
-    display: inline-block;
-    margin: 0.25rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  .add-to-cart {
-    background-color: #efefef;
-    border: 1px solid #ccc;
-  }
-  .view-details {
-    background-color: #f0f9ff;
-    border: 1px solid #99d6ff;
-  }
-  .stock-status {
-    display: block;
-    margin-top: 0.5rem;
-    font-weight: bold;
-  }
-  .in-stock {
-    color: green;
-  }
-  .out-of-stock {
-    color: red;
-  }
+  color: #000;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.basic-button:hover {
+  opacity: 0.9;
+}
 
-  .alert-banner {
-    /* Tailwind’s red-500 is approximately #ef4444 */
-    background-color: #ef4444;
-    color: #fff;
-    /* p-3 => padding: 0.75rem */
-    padding: 0.75rem;
-    /* rounded-md => border-radius: ~6px (0.375rem) */
-    border-radius: 0.375rem;
-    /* mb-2 => margin-bottom: 0.5rem */
-    margin-bottom: 0.5rem;
-  }
-  
-  /* ORDER SUMMARY */
-  .order-summary {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 8px;
-  }
-  
+.primary-button {
+  background-color: #1d4ed8; /* Standard blue */
+  color: #fff;
+  width: 100%;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.primary-button:hover {
+  opacity: 0.9;
+}
+
+/* -------------------------
+   Header
+------------------------- */
+.header-container {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 1.25rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif; /* Use the imported font */
+  font-weight: 700; /* Adjust as needed */
+}
+
+/* -------------------------
+   Cart Item
+------------------------- */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.item-image {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+.item-details {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.item-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+.item-price {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* -------------------------
+   Products List
+------------------------- */
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* -------------------------
+   Product Card
+------------------------- */
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  margin: 0 auto;
+  width: 250px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+.product-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 200px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.product-price {
+  font-weight: bold;
+  color: #555;
+}
+
+.product-description {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.add-to-cart,
+.view-details {
+  display: inline-block;
+  margin: 0.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-to-cart {
+  background-color: #2ea44f;
+  color: #fff;
+  border: none;
+}
+.add-to-cart:hover {
+  background-color: #279941;
+}
+
+.view-details {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+}
+.view-details:hover {
+  background-color: #f7f7f7;
+}
+
+.stock-status {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+.in-stock {
+  color: green;
+}
+.out-of-stock {
+  color: red;
+  font-weight: 700;
+}
+
+/* -------------------------
+   Alert Banner
+------------------------- */
+.alert-banner {
+  background-color: #ef4444; /* red */
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+/* -------------------------
+   Order Summary
+------------------------- */
+.order-summary {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* -------------------------
+   Product Detail Styles
+------------------------- */
+.detail-container {
+  padding: 1rem;
+}
+
+.detail-title {
+  font-size: 1.5rem;  /* Similar to Tailwind's 2xl */
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.detail-image {
+  width: 200px;       /* Fixed width */
+  height: 200px;      /* Fixed height */
+  object-fit: contain; /* Ensure the image fits within the box */
+  margin-bottom: 1rem;
+}
+
+.detail-price {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.detail-description {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+/* Reuse existing global .out-of-stock for consistency */
+.out-of-stock {
+  color: red;
+  font-weight: 700;
+}

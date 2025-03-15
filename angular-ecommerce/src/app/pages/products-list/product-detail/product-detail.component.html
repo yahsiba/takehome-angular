@@ -1,0 +1,22 @@
+<div class="detail-container">
+    <div *ngIf="product; else notFound">
+      <h2 class="detail-title">{{ product?.name }}</h2>
+      <img
+        [src]="product?.image"
+        alt="{{ product?.name }}"
+        class="detail-image"
+      />
+      <p class="detail-price">Price: {{ '$' + product?.price }}</p>
+      <p class="detail-description">{{ product?.description }}</p>
+      <p *ngIf="product?.stock !== undefined; else outOfStock">
+        In Stock: {{ product?.stock }}
+      </p>
+      <ng-template #outOfStock>
+        <p class="out-of-stock">Out of stock</p>
+      </ng-template>
+    </div>
+    <ng-template #notFound>
+      <p class="out-of-stock">Product not found.</p>
+    </ng-template>
+  </div>
+  

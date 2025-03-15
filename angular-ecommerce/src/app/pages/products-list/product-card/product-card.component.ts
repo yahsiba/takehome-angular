@@ -1,3 +1,16 @@
+/**
+ * ProductCardComponent
+ *
+ * Purpose:
+ *   Displays a product in a card format with its image, name, price, and description.
+ *   Rendered in the ProductsListComponent for each product.
+ *
+ * How It Works:
+ *   - Accepts a Product object via an input property "product".
+ *   - Provides buttons to add the product to the cart or view its details.
+ *   - Uses CartService and Router (via dependency injection) for these actions.
+ *
+ */
 import { Component, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
@@ -9,7 +22,6 @@ import { CartService } from '../../../services/cart.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './product-card.component.html',
-  //styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
   product = input.required<Product>();
@@ -24,3 +36,4 @@ export class ProductCardComponent {
     this.router.navigate(['/products', this.product().id]);
   }
 }
+

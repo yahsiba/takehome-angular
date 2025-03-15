@@ -1,3 +1,14 @@
+/**
+ * CartItemComponent
+ *
+ * Purpose:
+ *   Displays a single product in the shopping cart with an option to remove it.
+ *
+ * How It Works:
+ *   - Expects a Product object via an input property "item".
+ *   - Uses CartService to remove the product when the remove button is clicked.
+ *
+ */
 import { Component, inject, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../models/products.model';

@@ -1,3 +1,14 @@
+/**
+ * HeaderComponent
+ *
+ * Purpose:
+ *   Displays the application header with the site title and a primary button for the cart.
+ *
+ * How It Works:
+ *   - Uses dependency injection to get the CartService.
+ *   - Displays the current cart item count in the cart button.
+ *
+ */
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';

@@ -1,3 +1,14 @@
+/**
+ * CartComponent
+ *
+ * Purpose:
+ *   Displays the entire shopping cart including cart items and order summary.
+ *
+ * How It Works:
+ *   - Retrieves the current cart from CartService.
+ *   - Uses Angular's new @for syntax (or *ngFor) to iterate over cart items.
+ *
+ */
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
