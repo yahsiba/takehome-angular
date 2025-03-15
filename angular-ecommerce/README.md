@@ -1,4 +1,3 @@
-```markdown
 # AngularEcommerce
 
 A simple e-commerce application built with **Angular** that showcases a list of soccer jerseys. Users can view product details, add items to a cart, and see an order summary. The app follows best practices for component architecture, services, routing, and styling.
@@ -23,7 +22,7 @@ A simple e-commerce application built with **Angular** that showcases a list of 
    ```bash
    git clone https://github.com/your-username/AngularEcommerce.git
    cd AngularEcommerce
-   ```
+
 
 2. **Install Dependencies**  
    ```bash
