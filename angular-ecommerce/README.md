@@ -56,6 +56,9 @@ A simple e-commerce application built with **Angular** that showcases a list of 
 - **`/src/app/models/`**: Interfaces (Product model)  
 - **`/src/styles/`**: Shared or global styles (shared-styles.css)
 
+![Project Screenshot](screenshot.png)
+
+
 ## License
 
 This project is open-sourced under the [MIT License](LICENSE).
