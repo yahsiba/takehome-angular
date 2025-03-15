@@ -56,6 +56,8 @@ A simple e-commerce application built with **Angular** that showcases a list of 
 - **`/src/app/models/`**: Interfaces (Product model)  
 - **`/src/styles/`**: Shared or global styles (shared-styles.css)
 
+
+## Project Image:
 ![Project Screenshot](screenshot.png)
 
 
