@@ -1,3 +1,2 @@
 # takehome-angular
-technical assessment 
-main repo is in the angular-ecommerce folder
+Main repository with code to host website and its information is in angular-ecommerce folder. 
